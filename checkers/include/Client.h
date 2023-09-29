@@ -2,6 +2,7 @@
 #define CHECKERS_CLIENT_H
 
 #include <array>
+#include <string>
 
 class Client
 {

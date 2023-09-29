@@ -1,20 +1,18 @@
 # Description
 A CPP Networked Checkers Game
 
-
 # Building
-Clone this git repo
-```
-git clone https://github.com/james-maroulis/checkers.git
-```
-Run the following commands to build
+## Linux 
+* Clone this git repo
+``` git clone https://github.com/james-maroulis/checkers.git ```
+* Run the following commands to build
 ```
 cd checkers/build
 cmake ..
 make
 ```
-## Built Artifacts
-### Linux
+
+### Built Artifacts
 * build/linux/checkers - this is the built program
 * build/linux/checkers_ut - this is the unit test build using google test
 
@@ -23,27 +21,22 @@ make
 * build/mingw/checkers_ut - this is the unit test build using google test
 
 ## Requirements
-* boost asio found in libboost_system
+* libboost including library libboost_system - needed for asio
+  * ``` apt-get install -y libboost-all-dev ```
 * gtest for unit tests
-Note: The needed libraries are included in the lib folder and headers are in the include folder.
-Note: This was built on both Linux using gcc and Windows using mingw.
+  * ``` apt-get install -y libgtest-dev ```
 
 # Running the program
 * Server - To start the AI server opponent run the program with no arguments (port 42000 will be used)
-```
-./checkers
-```
+``` ./checkers ```
 
 * Client - To start the client run the program and provide the server IP address
 The port number is currently set in the code and not configurable)
-```
-./checkers 127.0.0.1
-```
+``` ./checkers 127.0.0.1 ```
 * Automatic Client - To start the automatic client that will play against the server with no user imput run the program
 with the server IP adress as the first argument and -a as the second argument
-```
-./checkers 127.0.0.1 -a
-```
+``` ./checkers 127.0.0.1 -a ```
+
 # Project Structure
 ## Cell
 This class holds the data related to a single cell on the game board.
@@ -69,4 +62,3 @@ Contains the main game logic for running the server or client player
 
 ## main
 Application entry point 
-
